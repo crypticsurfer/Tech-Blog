@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const api = require("./api");
 const withAuth = require("../utils/auth");
 const { User, Comment, Post } = require("../models");
 
@@ -11,7 +12,7 @@ const getUsername = async (userId) => {
   return user.dataValues.username;
 };
 
-//router.use("/api", api);
+router.use("/api", api);
 router.get("/", withAuth, async (req, res) => {
   const results = await Post.findAll({
     include: { model: User },
@@ -100,7 +101,7 @@ router.get("/blog/:id", withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
-  
+
 module.exports = router;
 
 
