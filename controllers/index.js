@@ -59,6 +59,48 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
+router.get("/blog/:id", withAuth, async (req, res) => {
+    try {
+      let blog = await Post.findOne({
+        where: {
+          id: req.params.id,
+        },
+        include: {
+          model: Comment,
+          include: {
+            model: User,
+          },
+        },
+      });
+  
+      res.render("blog", {
+        ...blog.dataValues,
+        username: await getUsername(blog.dataValues.user_id),
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
+  router.get("/new-blog", withAuth, async (req, res) => {
+    res.render("new-blog");
+  });
+  
+  router.get("/new-blog/:id", withAuth, async (req, res) => {
+    try {
+      let blog = await Post.findOne({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.render("new-blog", {
+        ...blog.dataValues
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
 module.exports = router;
 
 

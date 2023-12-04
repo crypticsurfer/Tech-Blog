@@ -1,0 +1,38 @@
+<form class="p-3">
+  {{#if id}}
+  <h1>Editing</h1>
+  {{/if}}
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" 
+    {{#if id}}
+    value={{title}}
+    {{/if}}
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="body" class="form-label">Body</label>
+    <textarea type="text" class="form-control" id="body">{{#if id}}{{body}}{{/if}}</textarea>
+  </div>
+  <div class="d-inline-flex">
+    <button 
+      {{#if id}}
+      id="updatePost"
+      {{else}}
+      id="addPost"
+      {{/if}}
+      type="submit" class="btn btn-primary m-1">
+        {{#if id}}
+        Update Post
+        {{else}}
+        Add Post
+        {{/if}}
+    </button>
+    <button id="cancel" type="submit" class="btn btn-secondary m-1">Cancel</button>
+  </div>
+</form>
+
+<script src="/js/new-blog.js" />
+
+
