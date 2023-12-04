@@ -1,32 +1,4 @@
 <div class="p-3">
-  <div class="d-flex justify-content-between">
-    <h1>Dashboard</h1>
-    <div>
-      <button id="home" type="submit" class="btn btn-secondary mt-2 mb-5">Home</button>
-      <button id="new" type="submit" class="btn btn-primary mt-2 mb-5">New Post</button>
-    </div>
-  </div>
-  <div>
-    <h3>Your posts</h3>
-  </div>
-
-  <ol class="list-group my-3">
-    {{#each blogs as |blog|}}
-      <a class="nav-link" href="/blog/{{blog.id}}">
-        <li class="nav-item list-group-item d-flex align-items-start">
-          <div>
-            <div class="fw-bold">{{blog.title}}</div>
-            {{blog.createdAt}}
-          </div>
-        </li>
-      </a>
-    {{/each}}
-  </ol>
-  <button id="logout" type="submit" class="btn btn-secondary">Logout</button>
-</div>
-<script src="/js/dashboard.js"></script>
-[1:27 AM]
-<div class="p-3">
   <div class="mb-3 d-flex justify-content-between">
     <a href="/">
       <button id="goBack" type="button" class="btn btn-secondary">Back</button>
