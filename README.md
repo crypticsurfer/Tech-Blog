@@ -11,8 +11,13 @@
 - [Questions?](#questions)
   ## Installation
   Navigate to the deployed app [HERE]()
+  
+  Clone the repo and go to your browser and type http://localhost3002 and you can login and use the application
+  ![login page](https://github.com/crypticsurfer/Tech-Blog/assets/130003418/6650a4aa-6807-4956-8474-53537a5a18a4)
+![Post Page](https://github.com/crypticsurfer/Tech-Blog/assets/130003418/c9fa3413-d178-4e84-a3d2-6e0c9c1abf41)
+
   ## Usage
- go to the deployed app and sign in and add new posts!
+ go to the deployed app or the local host link and sign in and add new posts!
   ## License
   MIT
   
